@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>beta - facerecogonition api v 0.0.1</title>
+</head>
+
+<body>
+    <h1> Facerecogonition api Beta v 0.0.1 <span> API Documentation </span></h1>
+    <h3><span style="text-decoration: underline;">Login</span></h3>
+    <p><span style="background-color: #ffff99;">&nbsp; &nbsp;/login [POST]&nbsp;</span></p>
+    <p><span style="color: #ff0000;">parametes to send</span></p>
+    <code>
+        <p style="text-align: left; padding-left: 30px;">{</p>
+            <p style="text-align: left; padding-left: 60px;">"username" : "eaxmple_username",</p>
+            <p style="text-align: left; padding-left: 60px;">"pasaword" : "eaxmple_password",</p>
+            <p style="text-align: left; padding-left: 60px;">"image" : "base64 converted image try to <a
+                    href="https://www.browserling.com/tools/image-to-base64">convert here</a> online for testing "</p>
+            <p style="text-align: left; padding-left: 30px;">}</p>
+            <p style="text-align: left; padding-left: 30px;">&nbsp;</p>
+    </code>
+    <p style="text-align: left;"><strong>Result:-</strong></p>
+    <code>
+        <div>
+            <div style="padding-left: 30px;">{</div>
+            <div style="padding-left: 60px;">&nbsp;&nbsp;"auth-status":&nbsp;"True",</div>
+            <div style="padding-left: 60px;">&nbsp;</div>
+            <div style="padding-left: 60px;">&nbsp;&nbsp;"facesetup":&nbsp;"True",</div>
+            <div style="padding-left: 60px;">&nbsp;</div>
+            <div style="padding-left: 60px;">&nbsp;&nbsp;"response":&nbsp;"works"</div>
+            <div style="padding-left: 30px;">}</div>
+            <div>&nbsp;</div>
+        </div>
+    </code>
+
+    <ul>
+        <li style="text-align: left;"><span style="color: #000080;">facesetup - This indicates successfull
+                facerecogonition</span></li>
+        <li style="text-align: left;"><span style="color: #000080;">response&nbsp; - This indicates successfull user
+                auth</span></li>
+    </ul>
+    <p>&nbsp;</p>
+    <h3><span style="text-decoration: underline;">SignUp</span></h3>
+    <p><span style="color: #000000; background-color: #ffff99;">&nbsp;/signup [POST]&nbsp;&nbsp;</span></p>
+    <p><span style="color: #ff0000;">parametes to send</span></p>
+    <code>
+        <p style="padding-left: 30px;">{</p>
+            <p style="padding-left: 60px;">"username" : "eaxmple_username",</p>
+            <p style="padding-left: 60px;">"password" : "eaxmple_password",</p>
+            <p style="padding-left: 60px;">"image" : "base64 converted image try to <a
+                    href="https://www.browserling.com/tools/image-to-base64">convert here</a> online for testing "</p>
+            <p style="padding-left: 30px;">}</p>
+            <p style="padding-left: 30px;">&nbsp;</p>
+            <p><strong>Result:-</strong></p>
+            <p>&nbsp;</p>
+    </code>
+
+    <code>
+        <div>
+            <div style="padding-left: 30px;">{</div>
+            <div style="padding-left: 60px;">&nbsp;&nbsp;"auth-status":&nbsp;"True",</div>
+            <div style="padding-left: 60px;">&nbsp;</div>
+            <div style="padding-left: 60px;">&nbsp;&nbsp;"facesetup":&nbsp;"True",</div>
+            <div style="padding-left: 60px;">&nbsp;</div>
+            <div style="padding-left: 60px;">&nbsp;&nbsp;"response":&nbsp;"works"</div>
+            <div style="padding-left: 30px;">}</div>
+            <div>&nbsp;</div>
+        </div>
+    </code>
+
+    <ul>
+        <li><span style="color: #000080;">facesetup - This indicates successfull facerecogonition setup&nbsp;</span>
+        </li>
+        <li><span style="color: #000080;">response&nbsp; - This indicates successfull user auth setup</span></li>
+    </ul>
+</body>
+
+</html>
