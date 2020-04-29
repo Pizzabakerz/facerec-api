@@ -1,0 +1,1 @@
+open('text.txt','wb').write(open('biden.jpg','rb').readlines()[0])
