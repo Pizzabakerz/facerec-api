@@ -43,4 +43,8 @@ COPY . /app
 EXPOSE 5000
 ENTRYPOINT [ "python3" ]
 
+<<<<<<< HEAD
 CMD [ "app.py" ]
+=======
+CMD [ "app.py" ]
+>>>>>>> 3173d3b3bebcf7b7c35c75a41e7e935a2b5db9f6

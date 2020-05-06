@@ -8,4 +8,8 @@ MarkupSafe==1.1.1
 numpy==1.18.3
 Pillow==7.1.2
 uWSGI==2.0.18
+<<<<<<< HEAD
 Werkzeug==1.0.1
+=======
+Werkzeug==1.0.1
+>>>>>>> 3173d3b3bebcf7b7c35c75a41e7e935a2b5db9f6
