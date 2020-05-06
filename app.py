@@ -2,7 +2,6 @@ from flask import Flask,request,jsonify,render_template
 from face import facecheck
 import base64
 import os
-from auth import auth
 
 app = Flask(__name__)
 
@@ -13,36 +12,36 @@ def document():
 @app.route('/login',methods=['post'])
 def login():        
     data = request.get_json()
-    name = data['username']
-    password = data['password']
+    name = data['username']    
     image_data = data['image']
-    with open('captured/'+name+'.jpg', "wb") as fh:
+    
+    with open('/home/jacksonjegadheeson/facerec-api/captured/'+name+'.jpg', "wb") as fh:
         fh.write(base64.b64decode(image_data))
-    rec = facecheck('registerdface/'+name+'.jpg','captured/'+name+'.jpg')
-    os.remove('captured/'+name+'.jpg')
-    auth_object = auth()
-    authentication = auth_object.authentication(name,password,"login")
+    
+    rec = facecheck('/home/jacksonjegadheeson/facerec-api/captured/'+name+'.jpg')
+    os.remove('/home/jacksonjegadheeson/facerec-api/captured/'+name+'.jpg')    
     return jsonify({
         'response':"works",
-        "facesetup":str(rec),
-        "auth-status":str(authentication)})
+        "facesetup":str(rec)})
 
 @app.route('/signup',methods=['post'])
 def signup():        
     data = request.get_json()
-    name = data['username']
-    password = data['password']
+    name = data['username']    
     image_data = data['image']
-    with open('registerdface/'+name+'.jpg', "wb") as fh:
+    
+    with open('/home/jacksonjegadheeson/facerec-api/registerdface/'+name+'.jpg', "wb") as fh:
         fh.write(base64.b64decode(image_data))
-    rec = facecheck(known_image_path='registerdface/'+name+'.jpg',unknown_image_path='registerdface/'+name+'.jpg')
-    auth_object = auth()
-    authentication = auth_object.authentication(name,password,"signup")
+    
+    with open('/home/jacksonjegadheeson/facerec-api/captured/'+name+'.jpg', "wb") as fh:
+        fh.write(base64.b64decode(image_data))
+    
+    rec = facecheck('/home/jacksonjegadheeson/facerec-api/captured/'+name+'.jpg')
+    os.remove('/home/jacksonjegadheeson/facerec-api/captured/'+name+'.jpg')  
     return jsonify({
         'response':"works",
-        "facesetup":str(rec),
-        "auth-status":str(authentication)})
+        "facesetup":str(rec)})
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True,host='0.0.0.0')

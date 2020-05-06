@@ -1,1 +1,1 @@
-open('text.txt','wb').write(open('biden.jpg','rb').readlines()[0])
+import face_recognition
